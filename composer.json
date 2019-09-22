@@ -1,0 +1,26 @@
+{
+    "name": "owenzhou/laravel-asset",
+    "description": "publish the asset",
+    "authors": [
+        {
+            "name": "owenzhou",
+            "email": "15118085523@163.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+	"psr-4": {
+	    "Owenzhou\\LaravelAsset\\": "src/"
+	}
+    },
+    "extra": {
+	"laravel": {
+	    "providers":[
+		"Owenzhou\\LaravelAsset\\AssetsProvider"
+	    ],
+	    "aliases": [
+		"Owenzhou\\LaravelAsset\\Facade"
+	    ]
+	}
+    }
+}
