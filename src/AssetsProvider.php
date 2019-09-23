@@ -28,7 +28,7 @@ class AssetsProvider extends ServiceProvider
     {
         //
 		$this->app->singleton('assets', function($app){
-			return new MyAsset();
+			return new Assets();
 		});
     }
 }

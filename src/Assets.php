@@ -4,7 +4,7 @@ use File;
 use App;
 use Request;
 
-class MyAsset{
+class Assets{
 
 	const DEFAULT_BASEPATH='assets';
 
