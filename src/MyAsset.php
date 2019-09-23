@@ -21,7 +21,7 @@ class MyAsset{
 	}
 
 	//发布静态资源路径
-	public function publish($name, $src){
+	public function publish($name, $src, $forceCopy=null){
 		if( isset($this->_published[$name]) )
 			return;
 
@@ -30,10 +30,10 @@ class MyAsset{
 
 		$dir=$this->hash($src.filemtime($src));
 		$dstDir=App::publicPath() .DIRECTORY_SEPARATOR .self::DEFAULT_BASEPATH .DIRECTORY_SEPARATOR .$dir;
-		if( !File::isDirectory($dstDir) || filemtime($src) > filemtime($dstDir) ){
+		if( !File::isDirectory($dstDir) || $forceCopy ){
 			File::copyDirectory($src, $dstDir);
 		}
-		$this->_published[$name] = Request::getRequestUri().self::DEFAULT_BASEPATH.'/'.$dir;
+		return $this->_published[$name] = Request::getRequestUri().self::DEFAULT_BASEPATH.'/'.$dir;
 	}
 
 	public function __get($name){
