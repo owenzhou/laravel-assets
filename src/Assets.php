@@ -57,7 +57,7 @@ class Assets{
 	//获取resources/views/themes/xxxx/layouts/assets
 	public function themePath($name){
 		//注册命名空间
-		View::addNamespace($name, resource_path('/views/themes/'. $name);
+		View::addNamespace($name, resource_path('/views/themes/'. $name));
 
 		return resource_path('/views/themes/'. $name .'/layouts/'. self::DEFAULT_BASEPATH);
 	}
