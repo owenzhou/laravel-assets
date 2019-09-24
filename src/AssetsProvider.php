@@ -13,7 +13,7 @@ class AssetsProvider extends ServiceProvider
      */
     public function boot()
     {
-        //$this->loadViewsFrom(__DIR__.'/views', 'LaravelAsset');
+        $this->loadViewsFrom(base_path('resources/views/themes'), 'Themes');
 		$this->publishes([
 			__DIR__.'/views' => base_path('resources/views'),	
 		]);

@@ -3,6 +3,7 @@ namespace Owenzhou\LaravelAsset;
 use File;
 use App;
 use Request;
+use View;
 
 class Assets{
 
@@ -23,7 +24,7 @@ class Assets{
 	//发布静态资源路径
 	public function publish($name, $src, $forceCopy=null){
 		if( isset($this->_published[$name]) )
-			return;
+			return $this->_published[$name];
 
 		if( !File::isDirectory($src) )
 			return trigger_error('src:'. $src .' error', E_USER_ERROR);
@@ -55,6 +56,9 @@ class Assets{
 
 	//获取resources/views/themes/xxxx/layouts/assets
 	public function themePath($name){
+		//注册命名空间
+		View::addNamespace($name, resource_path('/views/themes/'. $name);
+
 		return resource_path('/views/themes/'. $name .'/layouts/'. self::DEFAULT_BASEPATH);
 	}
 
