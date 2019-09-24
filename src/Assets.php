@@ -58,8 +58,6 @@ class Assets{
 	public function themePath($name){
 		//注册命名空间
 		View::addNamespace($name, resource_path('/views/themes/'. $name));
-		//识别blade里的@extends()里的命名空间
-		View::addExtension($name);
 
 		return resource_path('/views/themes/'. $name .'/layouts/'. self::DEFAULT_BASEPATH);
 	}
