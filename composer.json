@@ -8,6 +8,7 @@
         }
     ],
     "require": {},
+    "license": "MIT",
     "autoload": {
 	"psr-4": {
 	    "Owenzhou\\LaravelAsset\\": "src/"
