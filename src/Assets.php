@@ -34,7 +34,7 @@ class Assets{
 		if( !File::isDirectory($dstDir) || $forceCopy ){
 			File::copyDirectory($src, $dstDir);
 		}
-		return $this->_published[$name] = Request::getRequestUri().self::DEFAULT_BASEPATH.'/'.$dir;
+		return $this->_published[$name] = '/'.self::DEFAULT_BASEPATH.'/'.$dir;
 	}
 
 	public function __get($name){
